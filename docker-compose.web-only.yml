@@ -1,0 +1,31 @@
+# SMS Gateway — só serviço WEB (MySQL externo no EasyPanel)
+# Uso: definir DB_HOST = hostname interno do serviço MySQL
+#
+# Exemplo EasyPanel:
+#   docker compose -f docker-compose.web-only.yml up -d --build
+
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      DB_HOST: ${DB_HOST:?Defina DB_HOST com o hostname do MySQL}
+      DB_NAME: ${DB_NAME:-smsgateway}
+      DB_USER: ${DB_USER:-smsuser}
+      DB_PASSWORD: ${DB_PASSWORD:?Defina DB_PASSWORD}
+      APP_URL: ${APP_URL:-}
+      MIGRATE_KEY: ${MIGRATE_KEY:-}
+      MIGRATE_ON_START: ${MIGRATE_ON_START:-true}
+      TZ: ${TZ:-UTC}
+      WAIT_DB_ATTEMPTS: ${WAIT_DB_ATTEMPTS:-90}
+    expose:
+      - "80"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health.php"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 90s

@@ -1,0 +1,45 @@
+# SMS Gateway — container completo (1 serviço, tudo interno)
+# Executar a partir desta pasta: deploy/complete/
+
+name: smsgateway
+
+services:
+
+  smsgateway:
+    build:
+      context: ../..
+      dockerfile: deploy/complete/Dockerfile
+    container_name: smsgateway-complete
+    restart: unless-stopped
+    environment:
+      ALL_IN_ONE: "1"
+      DB_HOST: "127.0.0.1"
+      DB_PORT: "3306"
+      DB_NAME: ${DB_NAME:-smsgateway}
+      DB_USER: ${DB_USER:-smsuser}
+      DB_PASSWORD: ${DB_PASSWORD:-smspassword}
+      APP_URL: ${APP_URL:-http://localhost:8081}
+      MIGRATE_KEY: ${MIGRATE_KEY:-setup2026}
+      MIGRATE_ON_START: ${MIGRATE_ON_START:-true}
+      TZ: ${TZ:-Europe/Lisbon}
+    ports:
+      - "${HTTP_PORT:-8081}:80"
+    volumes:
+      - smsgateway_mysql_data:/var/lib/mysql
+    networks:
+      - smsgateway_internal
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1/health.php"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 120s
+
+networks:
+  smsgateway_internal:
+    driver: bridge
+    name: smsgateway_internal
+
+volumes:
+  smsgateway_mysql_data:
+    name: smsgateway_mysql_data

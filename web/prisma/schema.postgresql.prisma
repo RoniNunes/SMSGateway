@@ -1,0 +1,115 @@
+// Referência para Supabase — copie para schema.prisma e execute prisma migrate deploy
+//
+// datasource db {
+//   provider  = "postgresql"
+//   url       = env("DATABASE_URL")
+//   directUrl = env("DIRECT_URL")
+// }
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum UserRole {
+  admin
+  user
+}
+
+enum SmsQueueStatus {
+  pending
+  sent
+  failed
+}
+
+enum WebhookDeliveryStatus {
+  sent
+  failed
+}
+
+model User {
+  id             Int      @id @default(autoincrement())
+  name           String
+  email          String   @unique
+  password       String
+  apiKey         String?  @unique @map("api_key")
+  role           UserRole @default(user)
+  isActive       Boolean  @default(false) @map("is_active")
+  webhookEnabled Boolean  @default(false) @map("webhook_enabled")
+  webhookUrl     String?  @map("webhook_url")
+  webhookApiKey  String?  @map("webhook_api_key")
+  webhookAuto    Boolean  @default(false) @map("webhook_auto")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  devices     Device[]
+  smsReceived SmsReceived[]
+  smsQueue    SmsQueue[]
+
+  @@map("users")
+}
+
+model Device {
+  id             Int       @id @default(autoincrement())
+  userId         Int       @map("user_id")
+  deviceToken    String?   @unique @map("device_token")
+  pairingCode    String?   @unique @map("pairing_code")
+  pairingExpires DateTime? @map("pairing_expires")
+  deviceName     String    @default("Android") @map("device_name")
+  phoneNumber    String    @default("") @map("phone_number")
+  lastSeen       DateTime? @map("last_seen")
+  isActive       Boolean   @default(true) @map("is_active")
+  createdAt      DateTime  @default(now()) @map("created_at")
+
+  user        User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  smsReceived SmsReceived[]
+  smsQueue    SmsQueue[]
+
+  @@index([userId])
+  @@map("user_devices")
+}
+
+model SmsReceived {
+  id                Int                    @id @default(autoincrement())
+  userId            Int?                   @map("user_id")
+  deviceId          Int?                   @map("device_id")
+  userLabel         String                 @default("") @map("legacy_user")
+  phoneNum          String                 @map("phone_num")
+  message           String
+  datestamp         DateTime               @default(now())
+  dateSent          DateTime               @default(now()) @map("date_sent")
+  recordStamp       DateTime               @default(now()) @map("record_stamp")
+  webhookLastSent   DateTime?              @map("webhook_last_sent")
+  webhookLastStatus WebhookDeliveryStatus? @map("webhook_last_status")
+  webhookLastError  String?                @map("webhook_last_error")
+
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+  device Device? @relation(fields: [deviceId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([phoneNum])
+  @@map("sms_received")
+}
+
+model SmsQueue {
+  id        Int            @id @default(autoincrement())
+  userId    Int?           @map("user_id")
+  deviceId  Int?           @map("device_id")
+  phone     String
+  message   String
+  status    SmsQueueStatus @default(pending)
+  createdAt DateTime       @default(now()) @map("created_at")
+  sentAt    DateTime?      @map("sent_at")
+  errorMsg  String?        @map("error_msg")
+
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+  device Device? @relation(fields: [deviceId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([status])
+  @@map("sms_queue")
+}

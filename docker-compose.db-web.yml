@@ -1,0 +1,66 @@
+# LEGADO — 2 serviços (db + web). NÃO usar no EasyPanel se só o web arranca.
+# Use docker-compose.yml (1 container com MariaDB interno).
+
+services:
+
+  db:
+    image: mysql:8.0
+    hostname: db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
+      MYSQL_DATABASE: ${DB_NAME:-smsgateway}
+      MYSQL_USER: ${DB_USER:-smsuser}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-smspassword}
+      TZ: ${TZ:-UTC}
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-authentication-plugin=mysql_native_password
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./MySQL_DB.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p\"$$MYSQL_ROOT_PASSWORD\" || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 60s
+    networks:
+      - smsgateway_internal
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web-only
+    restart: unless-stopped
+    environment:
+      DB_HOST: db
+      DB_NAME: ${DB_NAME:-smsgateway}
+      DB_USER: ${DB_USER:-smsuser}
+      DB_PASSWORD: ${DB_PASSWORD:-smspassword}
+      APP_URL: ${APP_URL:-}
+      MIGRATE_KEY: ${MIGRATE_KEY:-}
+      PAIRING_SECRET: ${PAIRING_SECRET:-}
+      MIGRATE_ON_START: ${MIGRATE_ON_START:-true}
+      TZ: ${TZ:-UTC}
+    depends_on:
+      db:
+        condition: service_healthy
+    expose:
+      - "80"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health.php"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+    networks:
+      - smsgateway_internal
+
+volumes:
+  db_data:
+
+networks:
+  smsgateway_internal:
+    driver: bridge

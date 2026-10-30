@@ -1,0 +1,33 @@
+# Git & IDE
+.git
+.gitignore
+.idea
+*.iml
+.vscode
+
+# Android (nao necessario no container Next.js)
+app
+app/build
+app/.cxx
+.gradle
+gradle
+gradlew
+gradlew.bat
+local.properties
+build.gradle
+settings.gradle
+app/build.gradle
+
+# Dev local
+terminals
+abrir-firewall.bat
+docker-compose.dev.yml
+.env
+.env.local
+
+# Docs (opcional no image)
+*.md
+!EASYPANEL.md
+
+# APK — incluído via php/SMSGateway.apk no contexto de build
+# Se não existir, o download fica indisponível até fazer build local

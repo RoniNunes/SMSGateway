@@ -1,0 +1,34 @@
+# EasyPanel — upload projeto inteiro, ficheiro Compose:
+#   deploy/complete/compose.easypanel.yaml
+# Build context: raiz do repositório (onde estão php/ e MySQL_DB.sql)
+
+services:
+
+  smsgateway:
+    build:
+      context: .
+      dockerfile: deploy/complete/Dockerfile
+    restart: unless-stopped
+    environment:
+      ALL_IN_ONE: "1"
+      DB_NAME: ${DB_NAME:-smsgateway}
+      DB_USER: ${DB_USER:-smsuser}
+      DB_PASSWORD: ${DB_PASSWORD:?Defina DB_PASSWORD}
+      APP_URL: ${APP_URL:?Defina APP_URL — ex: https://sms.seudominio.com}
+      MIGRATE_KEY: ${MIGRATE_KEY:?Defina MIGRATE_KEY}
+      PAIRING_SECRET: ${PAIRING_SECRET:-}
+      MIGRATE_ON_START: ${MIGRATE_ON_START:-true}
+      TZ: ${TZ:-Europe/Lisbon}
+    volumes:
+      - smsgateway_data:/var/lib/mysql
+    expose:
+      - "80"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1/health.php"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 120s
+
+volumes:
+  smsgateway_data:

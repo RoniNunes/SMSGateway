@@ -1,11 +1,29 @@
+# Ambiente
+.env
+.env.local
+.env.production
+local.properties
+
+# IDE
+.idea/
 *.iml
-.gradle
-/local.properties
-/.idea/caches/build_file_checksums.ser
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-.DS_Store
-/build
-/captures
+.vscode/
+
+# Android
+.gradle/
+app/build/
+build/
+captures/
 .externalNativeBuild
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs & temp
+terminals/
+*.log
+
+# Deploy packages
+SMSGateway-easypanel*.zip
+SMSGateway-container-completo.zip

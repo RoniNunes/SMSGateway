@@ -1,0 +1,212 @@
+{
+  "lastUpdated": "June 30, 2026",
+  "versionLabel": "Version",
+  "version": "1.0",
+  "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy",
+    "dataRights": "Data Rights",
+    "contact": "Privacy contact"
+  },
+  "cookieBanner": {
+    "title": "We value your privacy",
+    "body": "We use strictly necessary cookies for authentication, security, and language preference. Optional analytics cookies are disabled by default. By clicking Accept, you acknowledge our Cookie Policy and Privacy Policy.",
+    "accept": "Accept all",
+    "necessaryOnly": "Necessary only",
+    "learnMore": "Learn more"
+  },
+  "consent": {
+    "waitlistDetail": "By signing up, you agree to the {privacyLink} and consent to the processing of your personal data for waitlist and product communications, in accordance with the LGPD (Brazil), GDPR (EU/EEA), and applicable US and Latin American privacy laws.",
+    "waitlistCheckbox": "I have read and accept the processing of my data as described above.",
+    "waitlistRequired": "You must accept the Privacy Policy to join the waitlist.",
+    "loginNotice": "By signing in, you confirm that you have read and agree to our {termsLink} and {privacyLink}.",
+    "pairNotice": "Device pairing involves processing device identifiers and phone numbers as described in our {privacyLink}."
+  },
+  "dataRights": {
+    "title": "Your data rights",
+    "subtitle": "Exercise your rights under LGPD, GDPR, CCPA/CPRA, and comparable laws.",
+    "exportTitle": "Export your data",
+    "exportDesc": "Download a JSON copy of your profile, devices, and recent SMS records.",
+    "exportBtn": "Download my data",
+    "exporting": "Preparing export…",
+    "deleteTitle": "Delete your account",
+    "deleteDesc": "Permanently delete your account, devices, SMS history, and queue. This action cannot be undone.",
+    "deletePassword": "Current password",
+    "deleteConfirm": "Type DELETE to confirm",
+    "deleteBtn": "Delete my account",
+    "deleting": "Deleting…",
+    "waitlistTitle": "Waitlist opt-out",
+    "waitlistDesc": "Remove your email from the waitlist without creating an account.",
+    "waitlistEmail": "Email address",
+    "waitlistBtn": "Remove from waitlist",
+    "retentionTitle": "Data retention",
+    "retentionDesc": "SMS records are kept while your account is active. Deleted accounts are purged within 30 days from backups. Waitlist data is kept until you opt out or the service launches.",
+    "rightsListTitle": "Your rights include",
+    "rightAccess": "Access and portability of your data",
+    "rightRectification": "Rectification of inaccurate data",
+    "rightErasure": "Erasure (right to be forgotten)",
+    "rightRestrict": "Restriction and objection to processing",
+    "rightWithdraw": "Withdraw consent at any time",
+    "rightComplaint": "Lodge a complaint with your supervisory authority (ANPD, EU DPA, or local regulator)",
+    "contactDpo": "Privacy requests: {email}"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "metaDescription": "How SMS Gateway collects, uses, and protects personal data under LGPD, GDPR, and international privacy laws.",
+    "sections": {
+      "introduction": {
+        "title": "1. Introduction",
+        "body": "This Privacy Policy explains how {company} (\"we\", \"us\") processes personal data when you use the SMS Gateway platform, website, mobile application, API, and related services (the \"Service\"). We comply with the Brazilian Lei Geral de Proteção de Dados (LGPD), the EU General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA/CPRA) where applicable, and comparable laws in Latin America and the United States."
+      },
+      "controller": {
+        "title": "2. Data controller",
+        "body": "Data controller: {company} (Tax ID: {taxId}), headquartered in {country}. Legal representative: {legalRepresentative}. Privacy contact / Data Protection Officer: {dpoEmail}{privacyPhone}. Website: {website}. Postal address: {address}. Applicable framework: {jurisdiction}. For EU/EEA users, we act as controller under GDPR. For Brazilian users, we comply with LGPD and ANPD guidance. For US residents, additional disclosures are provided in Section 9."
+      },
+      "scope": {
+        "title": "3. Scope",
+        "body": "This policy applies to website visitors, waitlist subscribers, registered users, administrators, and Android devices paired with the Service. It covers data processed through the dashboard, REST API, webhooks (including n8n integrations), SMS relay functions, and support communications."
+      },
+      "legalBases": {
+        "title": "4. Legal bases for processing",
+        "body": "We process data based on: (a) consent — waitlist registration, optional marketing, cookie preferences; (b) contract performance — providing the SMS gateway service to registered users; (c) legitimate interests — security, fraud prevention, service improvement, balanced against your rights; (d) legal obligation — compliance with applicable law. Brazilian LGPD legal bases (Art. 7) and GDPR Art. 6 are applied as appropriate to each processing activity."
+      },
+      "dataCollected": {
+        "title": "5. Categories of personal data",
+        "body": "We may process: account data (name, email, password hash, API keys, role); device data (device name, hash, pairing tokens, phone number, last-seen timestamps); SMS content and metadata (sender/recipient numbers, message body, timestamps); webhook configuration (URLs, API keys); technical data (IP address hashes, user-agent, session identifiers, cookies); waitlist data (name, email, company, use case). SMS content may contain personal data of third parties — you are responsible for lawful collection and use."
+      },
+      "purposes": {
+        "title": "6. Purposes of processing",
+        "body": "We use personal data to: operate the SMS gateway; authenticate users and devices; queue, send, and receive SMS; deliver webhooks to your configured endpoints; administer accounts; maintain security and audit logs; respond to privacy requests; manage the waitlist; and improve the Service. We do not sell personal data."
+      },
+      "retention": {
+        "title": "7. Retention",
+        "body": "Account and SMS data are retained while your account is active. Upon account deletion, we delete or anonymize personal data without undue delay, typically within 30 days including backups. Waitlist data is retained until withdrawal of consent or account creation. Consent and data-request logs are retained for up to 5 years for legal compliance. You may request earlier deletion subject to legal exceptions."
+      },
+      "sharing": {
+        "title": "8. Sharing and subprocessors",
+        "body": "We do not sell your personal data. We share data only: with your instructions (e.g., webhooks you configure to n8n or other systems); with infrastructure providers hosting the Service (cloud/hosting under data processing agreements); when required by law or to protect rights and safety. You are responsible for third-party services receiving webhook payloads."
+      },
+      "internationalTransfers": {
+        "title": "9. International transfers",
+        "body": "Your data may be processed in countries other than your own (including Brazil, EU, US, or Latin America). Where required, we rely on Standard Contractual Clauses, adequacy decisions, or LGPD mechanisms (Art. 33–36) and implement appropriate safeguards."
+      },
+      "security": {
+        "title": "10. Security",
+        "body": "We implement technical and organizational measures including encryption in transit (HTTPS), hashed passwords, httpOnly session cookies, access controls, and audit logging. No method is 100% secure — notify us immediately of suspected breaches at {dpoEmail}."
+      },
+      "rights": {
+        "title": "11. Your rights",
+        "body": "Depending on your location, you may have rights to access, rectify, erase, restrict, object, port data, and withdraw consent. California residents may have rights to know, delete, and opt out of sale (we do not sell data). Brazilian data subjects may exercise LGPD rights via ANPD. EU data subjects may contact their supervisory authority. Use the dashboard Privacy section or email {dpoEmail}. We respond within applicable deadlines (e.g., 15 days LGPD, 30 days GDPR)."
+      },
+      "children": {
+        "title": "12. Children",
+        "body": "The Service is not directed to individuals under 16 (or 13 in the US). We do not knowingly collect children's data. Contact us to delete such data if discovered."
+      },
+      "automatedDecisions": {
+        "title": "13. Automated decisions",
+        "body": "We do not make decisions based solely on automated processing that produce legal or similarly significant effects. Device status and delivery queues use automated rules for service operation only."
+      },
+      "changes": {
+        "title": "14. Changes",
+        "body": "We may update this policy. Material changes will be notified via the website or email. Continued use after the effective date constitutes acceptance where permitted by law. Version: {version}. Last updated: {lastUpdated}."
+      },
+      "contact": {
+        "title": "15. Contact",
+        "body": "Privacy inquiries and data subject requests: {dpoEmail}. Include sufficient information to verify your identity. We may request additional verification before fulfilling requests."
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "metaDescription": "Terms governing use of the SMS Gateway platform.",
+    "sections": {
+      "introduction": {
+        "title": "1. Agreement",
+        "body": "These Terms of Service (\"Terms\") govern access to the SMS Gateway platform operated by {company}. By using the Service, you agree to these Terms and our Privacy Policy."
+      },
+      "service": {
+        "title": "2. The Service",
+        "body": "SMS Gateway allows paired Android devices to send and receive SMS through a web dashboard, API, and webhooks. Availability depends on device connectivity, carrier networks, and fair-use limits. The Service is provided \"as is\" during beta/waitlist phases."
+      },
+      "accounts": {
+        "title": "3. Accounts",
+        "body": "Accounts are created by administrators or through authorized onboarding. You must provide accurate information, keep credentials secure, and notify us of unauthorized access. You are responsible for all activity under your account."
+      },
+      "acceptableUse": {
+        "title": "4. Acceptable use",
+        "body": "You must not use the Service for spam, fraud, harassment, illegal content, unauthorized surveillance, or violation of telecom regulations. You must obtain all required consents from SMS recipients and comply with anti-spam laws (CAN-SPAM, LGPD marketing rules, EU ePrivacy, local LATAM rules)."
+      },
+      "smsContent": {
+        "title": "5. SMS content responsibility",
+        "body": "You are solely responsible for message content and ensuring lawful processing of personal data in SMS. We act as a technical processor for messages you send or receive through your configured devices."
+      },
+      "devices": {
+        "title": "6. Devices",
+        "body": "You must own or have authorization to use paired phones and SIM cards. Device tokens and pairing codes must be kept confidential. We may suspend devices that threaten network integrity or violate these Terms."
+      },
+      "api": {
+        "title": "7. API and webhooks",
+        "body": "API keys are personal credentials — do not share them. Webhook endpoints you configure are your responsibility. Rate limits and abuse prevention may apply."
+      },
+      "fees": {
+        "title": "8. Fees",
+        "body": "Pricing, if any, will be communicated before billing. Standard carrier SMS charges from your mobile operator still apply."
+      },
+      "liability": {
+        "title": "9. Liability",
+        "body": "To the maximum extent permitted by law, we are not liable for indirect damages, message delivery failures, carrier outages, or third-party integrations. Our aggregate liability is limited to fees paid in the prior 12 months or €100, whichever is greater, where enforceable."
+      },
+      "termination": {
+        "title": "10. Termination",
+        "body": "You may delete your account at any time via the Privacy section. We may suspend or terminate access for Terms violations or legal requirements. Upon termination, data is handled per our Privacy Policy."
+      },
+      "governingLaw": {
+        "title": "11. Governing law and disputes",
+        "body": "These Terms are governed by the laws of {jurisdiction}, without prejudice to mandatory consumer protections in your country (including Brazil, EU member states, and US states). Controller: {company} ({country}). Disputes should first be addressed to {dpoEmail}."
+      },
+      "changes": {
+        "title": "12. Changes",
+        "body": "We may modify these Terms. Material changes will be announced with reasonable notice. Version {version}, effective {lastUpdated}."
+      },
+      "contact": {
+        "title": "13. Contact",
+        "body": "Questions about these Terms: {dpoEmail}."
+      }
+    }
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "metaDescription": "How SMS Gateway uses cookies and similar technologies.",
+    "sections": {
+      "introduction": {
+        "title": "1. Introduction",
+        "body": "This Cookie Policy explains how {company} uses cookies and similar technologies on the SMS Gateway website, in compliance with the GDPR, LGPD, ePrivacy Directive, and applicable US state laws."
+      },
+      "whatAreCookies": {
+        "title": "2. What are cookies?",
+        "body": "Cookies are small text files stored on your device. We also use similar local storage for preferences where applicable."
+      },
+      "cookiesWeUse": {
+        "title": "3. Cookies we use",
+        "body": "Strictly necessary: smsgw_session (authentication, session management, 7 days, httpOnly); locale (language preference, 1 year); smsgw_consent (records your cookie choice, 1 year). We do not use third-party advertising cookies. Optional analytics cookies, if introduced later, will require prior consent."
+      },
+      "legalBasis": {
+        "title": "4. Legal basis",
+        "body": "Necessary cookies are used based on legitimate interest and contractual necessity. Optional cookies require consent under GDPR and LGPD."
+      },
+      "manage": {
+        "title": "5. Managing cookies",
+        "body": "Use our cookie banner to accept or limit cookies. You may also control cookies via browser settings. Disabling necessary cookies may prevent login."
+      },
+      "changes": {
+        "title": "6. Changes",
+        "body": "We may update this policy. Version {version}, {lastUpdated}."
+      },
+      "contact": {
+        "title": "7. Contact",
+        "body": "Cookie questions: {dpoEmail}."
+      }
+    }
+  }
+}

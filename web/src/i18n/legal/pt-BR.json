@@ -1,0 +1,212 @@
+{
+  "lastUpdated": "30 de junho de 2026",
+  "versionLabel": "Versão",
+  "version": "1.0",
+  "footer": {
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "cookies": "Política de Cookies",
+    "dataRights": "Direitos de Dados",
+    "contact": "Contato de privacidade"
+  },
+  "cookieBanner": {
+    "title": "Valorizamos sua privacidade",
+    "body": "Utilizamos cookies estritamente necessários para autenticação, segurança e preferência de idioma. Cookies de análise opcionais estão desativados por padrão. Ao clicar em Aceitar, você reconhece nossa Política de Cookies e Política de Privacidade.",
+    "accept": "Aceitar todos",
+    "necessaryOnly": "Somente necessários",
+    "learnMore": "Saiba mais"
+  },
+  "consent": {
+    "waitlistDetail": "Ao inscrever-se, você concorda com a {privacyLink} e consente com o tratamento dos seus dados pessoais para comunicações da lista de espera e do produto, em conformidade com a LGPD (Brasil), o GDPR (UE/EEE) e as leis de privacidade aplicáveis nos EUA e na América Latina.",
+    "waitlistCheckbox": "Li e aceito o tratamento dos meus dados conforme descrito acima.",
+    "waitlistRequired": "Você deve aceitar a Política de Privacidade para entrar na lista de espera.",
+    "loginNotice": "Ao fazer login, você confirma que leu e concorda com nossos {termsLink} e {privacyLink}.",
+    "pairNotice": "O pareamento de dispositivos envolve o tratamento de identificadores de dispositivo e números de telefone conforme descrito em nossa {privacyLink}."
+  },
+  "dataRights": {
+    "title": "Seus direitos de dados",
+    "subtitle": "Exerça seus direitos nos termos da LGPD, GDPR, CCPA/CPRA e leis equivalentes.",
+    "exportTitle": "Exportar seus dados",
+    "exportDesc": "Baixe uma cópia em JSON do seu perfil, dispositivos e registros recentes de SMS.",
+    "exportBtn": "Baixar meus dados",
+    "exporting": "Preparando exportação…",
+    "deleteTitle": "Excluir sua conta",
+    "deleteDesc": "Exclua permanentemente sua conta, dispositivos, histórico de SMS e fila. Esta ação não pode ser desfeita.",
+    "deletePassword": "Senha atual",
+    "deleteConfirm": "Digite DELETE para confirmar",
+    "deleteBtn": "Excluir minha conta",
+    "deleting": "Excluindo…",
+    "waitlistTitle": "Cancelar inscrição na lista de espera",
+    "waitlistDesc": "Remova seu e-mail da lista de espera sem criar uma conta.",
+    "waitlistEmail": "Endereço de e-mail",
+    "waitlistBtn": "Remover da lista de espera",
+    "retentionTitle": "Retenção de dados",
+    "retentionDesc": "Os registros de SMS são mantidos enquanto sua conta estiver ativa. Contas excluídas são removidas dos backups em até 30 dias. Os dados da lista de espera são mantidos até você cancelar a inscrição ou o serviço ser lançado.",
+    "rightsListTitle": "Seus direitos incluem",
+    "rightAccess": "Acesso e portabilidade dos seus dados",
+    "rightRectification": "Correção de dados inexatos",
+    "rightErasure": "Eliminação (direito ao esquecimento)",
+    "rightRestrict": "Limitação e oposição ao tratamento",
+    "rightWithdraw": "Revogar o consentimento a qualquer momento",
+    "rightComplaint": "Registrar reclamação junto à autoridade supervisora (ANPD, DPA da UE ou regulador local)",
+    "contactDpo": "Solicitações de privacidade: {email}"
+  },
+  "privacy": {
+    "title": "Política de Privacidade",
+    "metaDescription": "Como o SMS Gateway coleta, utiliza e protege dados pessoais nos termos da LGPD, GDPR e leis internacionais de privacidade.",
+    "sections": {
+      "introduction": {
+        "title": "1. Introdução",
+        "body": "Esta Política de Privacidade explica como a {company} (\"nós\", \"nos\") trata dados pessoais quando você utiliza a plataforma SMS Gateway, o site, o aplicativo móvel, a API e os serviços relacionados (o \"Serviço\"). Cumprimos a Lei Geral de Proteção de Dados (LGPD) do Brasil, o Regulamento Geral de Proteção de Dados (GDPR) da UE, a Lei de Privacidade do Consumidor da Califórnia (CCPA/CPRA), quando aplicável, e leis equivalentes na América Latina e nos Estados Unidos."
+      },
+      "controller": {
+        "title": "2. Controlador de dados",
+        "body": "Controlador de dados: {company} (CNPJ/NIF: {taxId}), sede em {country}. Representante legal: {legalRepresentative}. Contato de privacidade / Encarregado (DPO): {dpoEmail}{privacyPhone}. Site: {website}. Endereço: {address}. Marco aplicável: {jurisdiction}. Para usuários da UE/EEE, atuamos como controlador sob o GDPR. Para usuários brasileiros, cumprimos a LGPD e as orientações da ANPD. Para residentes dos EUA, divulgações adicionais constam na Seção 9."
+      },
+      "scope": {
+        "title": "3. Escopo",
+        "body": "Esta política aplica-se a visitantes do site, inscritos na lista de espera, usuários registrados, administradores e dispositivos Android pareados com o Serviço. Abrange dados tratados pelo painel, API REST, webhooks (incluindo integrações com n8n), funções de retransmissão de SMS e comunicações de suporte."
+      },
+      "legalBases": {
+        "title": "4. Bases legais para o tratamento",
+        "body": "Tratamos dados com base em: (a) consentimento — cadastro na lista de espera, marketing opcional, preferências de cookies; (b) execução de contrato — prestação do serviço de gateway SMS a usuários registrados; (c) interesses legítimos — segurança, prevenção de fraudes, melhoria do serviço, equilibrados com seus direitos; (d) obrigação legal — conformidade com a legislação aplicável. As bases legais da LGPD brasileira (Art. 7) e do GDPR (Art. 6) são aplicadas conforme apropriado a cada atividade de tratamento."
+      },
+      "dataCollected": {
+        "title": "5. Categorias de dados pessoais",
+        "body": "Podemos tratar: dados de conta (nome, e-mail, hash de senha, chaves de API, função); dados de dispositivo (nome do dispositivo, hash, tokens de pareamento, número de telefone, registros de última atividade); conteúdo e metadados de SMS (números de remetente/destinatário, corpo da mensagem, registros de data e hora); configuração de webhooks (URLs, chaves de API); dados técnicos (hashes de endereço IP, user-agent, identificadores de sessão, cookies); dados da lista de espera (nome, e-mail, empresa, caso de uso). O conteúdo de SMS pode conter dados pessoais de terceiros — você é responsável pela coleta e uso lícitos."
+      },
+      "purposes": {
+        "title": "6. Finalidades do tratamento",
+        "body": "Utilizamos dados pessoais para: operar o gateway SMS; autenticar usuários e dispositivos; enfileirar, enviar e receber SMS; entregar webhooks aos endpoints configurados por você; administrar contas; manter segurança e registros de auditoria; responder a solicitações de privacidade; gerenciar a lista de espera; e melhorar o Serviço. Não vendemos dados pessoais."
+      },
+      "retention": {
+        "title": "7. Retenção",
+        "body": "Dados de conta e SMS são mantidos enquanto sua conta estiver ativa. Após a exclusão da conta, eliminamos ou anonimizamos dados pessoais sem demora injustificada, normalmente em até 30 dias, incluindo backups. Dados da lista de espera são mantidos até a revogação do consentimento ou criação de conta. Registros de consentimento e solicitações de dados são mantidos por até 5 anos para conformidade legal. Você pode solicitar exclusão antecipada, sujeita a exceções legais."
+      },
+      "sharing": {
+        "title": "8. Compartilhamento e suboperadores",
+        "body": "Não vendemos seus dados pessoais. Compartilhamos dados apenas: conforme suas instruções (por exemplo, webhooks configurados para n8n ou outros sistemas); com provedores de infraestrutura que hospedam o Serviço (nuvem/hospedagem sob acordos de tratamento de dados); quando exigido por lei ou para proteger direitos e segurança. Você é responsável pelos serviços de terceiros que recebem payloads de webhooks."
+      },
+      "internationalTransfers": {
+        "title": "9. Transferências internacionais",
+        "body": "Seus dados podem ser tratados em países diferentes do seu (incluindo Brasil, UE, EUA ou América Latina). Quando necessário, nos baseamos em Cláusulas Contratuais Padrão, decisões de adequação ou mecanismos da LGPD (Art. 33–36) e implementamos salvaguardas apropriadas."
+      },
+      "security": {
+        "title": "10. Segurança",
+        "body": "Implementamos medidas técnicas e organizacionais, incluindo criptografia em trânsito (HTTPS), senhas com hash, cookies de sessão httpOnly, controles de acesso e registro de auditoria. Nenhum método é 100% seguro — notifique-nos imediatamente sobre suspeitas de violação em {dpoEmail}."
+      },
+      "rights": {
+        "title": "11. Seus direitos",
+        "body": "Dependendo da sua localização, você pode ter direitos de acesso, correção, eliminação, limitação, oposição, portabilidade e revogação de consentimento. Residentes da Califórnia podem ter direitos de saber, excluir e optar por não vender (não vendemos dados). Titulares de dados brasileiros podem exercer direitos da LGPD junto à ANPD. Titulares de dados da UE podem contatar sua autoridade supervisora. Utilize a seção Privacidade do painel ou envie e-mail para {dpoEmail}. Respondemos dentro dos prazos aplicáveis (por exemplo, 15 dias na LGPD, 30 dias no GDPR)."
+      },
+      "children": {
+        "title": "12. Crianças",
+        "body": "O Serviço não se destina a menores de 16 anos (ou 13 nos EUA). Não coletamos intencionalmente dados de crianças. Entre em contato conosco para excluir tais dados, se identificados."
+      },
+      "automatedDecisions": {
+        "title": "13. Decisões automatizadas",
+        "body": "Não tomamos decisões baseadas exclusivamente em tratamento automatizado que produzam efeitos legais ou de importância similar. Status de dispositivos e filas de entrega utilizam regras automatizadas apenas para operação do serviço."
+      },
+      "changes": {
+        "title": "14. Alterações",
+        "body": "Podemos atualizar esta política. Alterações materiais serão notificadas pelo site ou e-mail. O uso continuado após a data de vigência constitui aceitação, quando permitido por lei. Versão: {version}. Última atualização: {lastUpdated}."
+      },
+      "contact": {
+        "title": "15. Contato",
+        "body": "Consultas de privacidade e solicitações de titulares de dados: {dpoEmail}. Inclua informações suficientes para verificar sua identidade. Podemos solicitar verificação adicional antes de atender às solicitações."
+      }
+    }
+  },
+  "terms": {
+    "title": "Termos de Serviço",
+    "metaDescription": "Termos que regem o uso da plataforma SMS Gateway.",
+    "sections": {
+      "introduction": {
+        "title": "1. Acordo",
+        "body": "Estes Termos de Serviço (\"Termos\") regem o acesso à plataforma SMS Gateway operada pela {company}. Ao utilizar o Serviço, você concorda com estes Termos e com nossa Política de Privacidade."
+      },
+      "service": {
+        "title": "2. O Serviço",
+        "body": "O SMS Gateway permite que dispositivos Android pareados enviem e recebam SMS por meio de um painel web, API e webhooks. A disponibilidade depende da conectividade do dispositivo, das redes das operadoras e dos limites de uso justo. O Serviço é fornecido \"no estado em que se encontra\" durante as fases beta/lista de espera."
+      },
+      "accounts": {
+        "title": "3. Contas",
+        "body": "As contas são criadas por administradores ou por meio de integração autorizada. Você deve fornecer informações precisas, manter as credenciais seguras e nos notificar sobre acesso não autorizado. Você é responsável por toda atividade em sua conta."
+      },
+      "acceptableUse": {
+        "title": "4. Uso aceitável",
+        "body": "Você não deve utilizar o Serviço para spam, fraude, assédio, conteúdo ilegal, vigilância não autorizada ou violação de regulamentações de telecomunicações. Você deve obter todos os consentimentos exigidos dos destinatários de SMS e cumprir leis anti-spam (CAN-SPAM, regras de marketing da LGPD, ePrivacy da UE, regras locais da América Latina)."
+      },
+      "smsContent": {
+        "title": "5. Responsabilidade pelo conteúdo de SMS",
+        "body": "Você é o único responsável pelo conteúdo das mensagens e por garantir o tratamento lícito de dados pessoais em SMS. Atuamos como operador técnico das mensagens que você envia ou recebe por meio dos dispositivos configurados."
+      },
+      "devices": {
+        "title": "6. Dispositivos",
+        "body": "Você deve ser proprietário ou ter autorização para utilizar os telefones e chips pareados. Tokens de dispositivo e códigos de pareamento devem ser mantidos em sigilo. Podemos suspender dispositivos que ameacem a integridade da rede ou violem estes Termos."
+      },
+      "api": {
+        "title": "7. API e webhooks",
+        "body": "As chaves de API são credenciais pessoais — não as compartilhe. Os endpoints de webhook que você configurar são de sua responsabilidade. Limites de taxa e prevenção de abuso podem ser aplicados."
+      },
+      "fees": {
+        "title": "8. Taxas",
+        "body": "Os preços, se houver, serão comunicados antes da cobrança. As tarifas padrão de SMS da sua operadora móvel continuam aplicáveis."
+      },
+      "liability": {
+        "title": "9. Responsabilidade",
+        "body": "Na máxima extensão permitida por lei, não somos responsáveis por danos indiretos, falhas na entrega de mensagens, interrupções de operadoras ou integrações de terceiros. Nossa responsabilidade agregada é limitada às taxas pagas nos 12 meses anteriores ou €100, o que for maior, quando aplicável."
+      },
+      "termination": {
+        "title": "10. Rescisão",
+        "body": "Você pode excluir sua conta a qualquer momento na seção Privacidade. Podemos suspender ou encerrar o acesso por violações dos Termos ou exigências legais. Após a rescisão, os dados são tratados conforme nossa Política de Privacidade."
+      },
+      "governingLaw": {
+        "title": "11. Lei aplicável e disputas",
+        "body": "Estes Termos são regidos pelas leis de {jurisdiction}, sem prejuízo das proteções obrigatórias ao consumidor no seu país (Brasil, UE, EUA, etc.). Controlador: {company} ({country}). Disputas devem ser inicialmente encaminhadas para {dpoEmail}."
+      },
+      "changes": {
+        "title": "12. Alterações",
+        "body": "Podemos modificar estes Termos. Alterações materiais serão anunciadas com aviso razoável. Versão {version}, vigente em {lastUpdated}."
+      },
+      "contact": {
+        "title": "13. Contato",
+        "body": "Dúvidas sobre estes Termos: {dpoEmail}."
+      }
+    }
+  },
+  "cookies": {
+    "title": "Política de Cookies",
+    "metaDescription": "Como o SMS Gateway utiliza cookies e tecnologias similares.",
+    "sections": {
+      "introduction": {
+        "title": "1. Introdução",
+        "body": "Esta Política de Cookies explica como a {company} utiliza cookies e tecnologias similares no site do SMS Gateway, em conformidade com a LGPD, o GDPR, a Diretiva ePrivacy e as leis estaduais aplicáveis nos EUA."
+      },
+      "whatAreCookies": {
+        "title": "2. O que são cookies?",
+        "body": "Cookies são pequenos arquivos de texto armazenados no seu dispositivo. Também utilizamos armazenamento local similar para preferências, quando aplicável."
+      },
+      "cookiesWeUse": {
+        "title": "3. Cookies que utilizamos",
+        "body": "Estritamente necessários: smsgw_session (autenticação, gerenciamento de sessão, 7 dias, httpOnly); locale (preferência de idioma, 1 ano); smsgw_consent (registra sua escolha de cookies, 1 ano). Não utilizamos cookies de publicidade de terceiros. Cookies de análise opcionais, se introduzidos posteriormente, exigirão consentimento prévio."
+      },
+      "legalBasis": {
+        "title": "4. Base legal",
+        "body": "Cookies necessários são utilizados com base em interesse legítimo e necessidade contratual. Cookies opcionais exigem consentimento nos termos do GDPR e da LGPD."
+      },
+      "manage": {
+        "title": "5. Gerenciar cookies",
+        "body": "Utilize nosso banner de cookies para aceitar ou limitar cookies. Você também pode controlar cookies pelas configurações do navegador. Desativar cookies necessários pode impedir o login."
+      },
+      "changes": {
+        "title": "6. Alterações",
+        "body": "Podemos atualizar esta política. Versão {version}, {lastUpdated}."
+      },
+      "contact": {
+        "title": "7. Contato",
+        "body": "Dúvidas sobre cookies: {dpoEmail}."
+      }
+    }
+  }
+}

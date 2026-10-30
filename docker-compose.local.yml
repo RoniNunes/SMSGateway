@@ -1,0 +1,8 @@
+# Localhost — expõe o all-in-one em http://localhost:8081
+
+services:
+  app:
+    ports:
+      - "8081:80"
+    environment:
+      APP_URL: http://localhost:8081

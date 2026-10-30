@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SMSGateway</string>
+    <string name="btn_read_sms">Leer SMS recibidos</string>
+    <string name="btn_send_sms">Enviar SMS</string>
+    <string name="btn_settings">Ajustes</string>
+    <string name="header_title">SMS Gateway</string>
+    <string name="header_server">Servidor</string>
+    <string name="header_connecting">Conectando…</string>
+    <string name="section_compose">REDACTAR MENSAJE</string>
+    <string name="hint_phone">Número de teléfono</string>
+    <string name="hint_message">Mensaje</string>
+    <string name="section_inbox">SMS RECIBIDOS</string>
+    <string name="inbox_count_label">%1$d mensajes</string>
+
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_subtitle">Información del dispositivo conectado</string>
+    <string name="settings_device_info">DISPOSITIVO</string>
+    <string name="settings_label_device">Nombre</string>
+    <string name="settings_label_phone">Número SIM</string>
+    <string name="settings_label_server">Servidor</string>
+    <string name="settings_label_status">Estado</string>
+    <string name="settings_phone_unknown">No detectado</string>
+    <string name="settings_phone_save">Guardar número</string>
+    <string name="settings_phone_detect">Detectar de la SIM</string>
+    <string name="settings_phone_invalid">Introduzca un número válido (mín. 8 dígitos)</string>
+    <string name="settings_phone_saved">Número guardado y enviado al servidor · %1$s</string>
+    <string name="settings_phone_saved_local">Número guardado en el dispositivo · %1$s</string>
+    <string name="settings_phone_manual">Número manual — edite y guarde para actualizar el panel</string>
+    <string name="settings_phone_detected_hint">Número actual: %1$s</string>
+    <string name="settings_status_connected">Conectado a la cuenta</string>
+    <string name="settings_privacy">Política de Privacidad</string>
+    <string name="settings_back">Volver a la app</string>
+    <string name="settings_repair">Volver a emparejar</string>
+    <string name="settings_repair_title">¿Volver a emparejar?</string>
+    <string name="settings_repair_message">El token actual dejará de funcionar. Úselo solo si necesita vincular una cuenta nueva o un QR del panel.</string>
+    <string name="settings_repair_confirm">Emparejar de nuevo</string>
+
+    <string name="notification_channel_name">Cola de envío SMS</string>
+    <string name="notification_channel_desc">Mantiene el gateway activo para enviar SMS desde el panel</string>
+
+    <string name="status_connecting">Conectando al servidor…</string>
+    <string name="status_online">En línea</string>
+    <string name="status_offline">Desconectado</string>
+    <string name="status_server_unreachable">Servidor inaccesible</string>
+    <string name="status_queue_empty">En línea — cola vacía</string>
+    <string name="status_missing_sms_permission">Servidor OK — falta permiso SEND_SMS</string>
+    <string name="status_sending">Enviando %1$d SMS…</string>
+    <string name="status_sent_to">SMS enviado → %1$s</string>
+    <string name="status_send_failed">Error al enviar SMS</string>
+
+    <string name="auth_dialog_title">Sesión finalizada</string>
+    <string name="auth_reconnect">Reconectar</string>
+    <string name="auth_device_inactive">Dispositivo desactivado en el panel. Actívelo o genere un nuevo QR.</string>
+    <string name="auth_token_revoked">Token revocado. Abra el panel → Dispositivos → Reconectar.</string>
+    <string name="auth_generic">Conexión no válida. Regístrese de nuevo con el QR del panel.</string>
+
+    <string name="setup_title">SMS Gateway</string>
+    <string name="setup_subtitle">Vincule su teléfono a su cuenta</string>
+    <string name="setup_hint">Escanee el código QR en el panel o introduzca servidor + código manualmente.</string>
+    <string name="setup_server_hint">URL del servidor</string>
+    <string name="setup_copy">Copiar</string>
+    <string name="setup_copy_server">Copiar URL del servidor</string>
+    <string name="setup_copy_code">Copiar código de emparejamiento</string>
+    <string name="setup_copied_server">URL del servidor copiada</string>
+    <string name="setup_copied_code">Código de emparejamiento copiado</string>
+    <string name="setup_copy_empty">Nada que copiar</string>
+    <string name="setup_pairing_info_title">EMPAREJAMIENTO AUTOMÁTICO</string>
+    <string name="setup_server_placeholder">https://su-servidor.com</string>
+    <string name="setup_code_hint">Código de emparejamiento (8 caracteres)</string>
+    <string name="setup_name_hint">Nombre del dispositivo</string>
+    <string name="setup_name_helper">Detectado automáticamente en este teléfono</string>
+    <string name="setup_name_detecting">Leyendo nombre del dispositivo…</string>
+    <string name="setup_name_detected">Dispositivo detectado: %1$s</string>
+    <string name="setup_register_btn">Registrar dispositivo</string>
+    <string name="setup_phone_hint">Número SIM / teléfono</string>
+    <string name="setup_phone_helper">Detectado automáticamente desde la SIM cuando es posible</string>
+    <string name="setup_phone_label">Número SIM</string>
+    <string name="setup_phone_detecting">Leyendo número de la SIM…</string>
+    <string name="setup_phone_detected">SIM detectada: %1$s</string>
+    <string name="setup_phone_not_detected">No detectado — introduzca el número con prefijo (ej: +34…, +55…)</string>
+    <string name="setup_phone_no_telephony">Este dispositivo no tiene chip/telefonía (p. ej. tablet solo Wi‑Fi) — introduzca el número del gateway manualmente</string>
+    <string name="setup_phone_permission_needed">Permita acceso al teléfono para leer el número de la SIM</string>
+    <string name="setup_phone_required">Indique el número del chip para completar el registro</string>
+    <string name="setup_success_phone">Registrado · %1$s</string>
+    <string name="setup_auto_pairing">Emparejamiento automático en curso…</string>
+    <string name="setup_registering">Registrando dispositivo…</string>
+    <string name="setup_missing_fields">Complete servidor y código</string>
+    <string name="setup_success">¡Dispositivo registrado!</string>
+    <string name="setup_error">Error al registrar</string>
+    <string name="setup_network_error">Servidor inaccesible — compruebe URL y Wi‑Fi</string>
+
+    <string name="inbox_error">No se pudo acceder a la bandeja de entrada</string>
+    <string name="inbox_empty">No se encontraron SMS</string>
+    <string name="inbox_count">%1$d mensajes</string>
+    <string name="inbox_loaded">%1$d SMS cargados</string>
+    <string name="inbox_loading">Leyendo SMS…</string>
+    <string name="manual_missing_phone">Introduzca un número de teléfono</string>
+    <string name="manual_missing_message">Introduzca un mensaje</string>
+    <string name="manual_sent">SMS enviado a %1$s</string>
+    <string name="manual_error">Error al enviar: %1$s</string>
+</resources>

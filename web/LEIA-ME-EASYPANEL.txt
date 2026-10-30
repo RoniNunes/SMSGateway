@@ -1,0 +1,32 @@
+SMS Gateway Web - EasyPanel (Next.js)
+=====================================
+
+1. Remova variaveis PHP antigas (DB_PASSWORD, MYSQL_*, etc.)
+
+2. Environment minimo:
+   PORT=80
+   APP_URL=https://SEU-DOMINIO.com
+   DATABASE_URL=file:/data/smsgateway.db
+   MIGRATE_KEY=...
+   PAIRING_SECRET=...
+   SESSION_SECRET=...
+   ADMIN_RECOVERY_SECRET=...   (min. 24 chars — recuperacao de senha admin)
+   LEGAL_COMPANY_NAME=...
+   LEGAL_DPO_EMAIL=privacy@seudominio.com
+   LEGAL_JURISDICTION=Uniao Europeia, Brasil e jurisdicoes aplicaveis
+   NODE_ENV=production
+
+   Guia completo recuperacao admin: web/RECUPERACAO-ADMINISTRADOR.md
+
+3. Domains: proxy porta 80 + HTTPS
+
+4. Deploy (3-5 min na 1.a vez)
+
+5. Login: admin@smsgateway.local / admin123
+
+6. Painel Admin -> Sistema:
+   - URL publica (QR / APK)
+   - Dados legais da empresa (politicas LGPD/GDPR)
+
+7. Verificar: https://SEU-DOMINIO/health
+   API REST: https://SEU-DOMINIO/api/v1

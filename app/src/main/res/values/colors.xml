@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <!-- Palette principal - Dark Navy + Teal -->
+    <color name="colorPrimary">#00C9B1</color>
+    <color name="colorPrimaryDark">#00A896</color>
+    <color name="colorAccent">#00C9B1</color>
+
+    <!-- Backgrounds -->
+    <color name="colorBackground">#0A0E1A</color>
+    <color name="colorSurface">#121828</color>
+    <color name="colorCard">#1A2236</color>
+    <color name="colorCardElevated">#1F2A40</color>
+
+    <!-- Borders / Dividers -->
+    <color name="colorStroke">#253352</color>
+    <color name="colorDivider">#1E2B44</color>
+
+    <!-- Texto -->
+    <color name="colorTextPrimary">#EAF0FF</color>
+    <color name="colorTextSecondary">#7A90B8</color>
+    <color name="colorTextHint">#3D506E</color>
+
+    <!-- Botões -->
+    <color name="colorBtnSend">#00C9B1</color>
+    <color name="colorBtnSendText">#0A0E1A</color>
+    <color name="colorBtnRead">#253352</color>
+    <color name="colorBtnReadText">#00C9B1</color>
+
+    <!-- Status / Feedback -->
+    <color name="colorSuccess">#00C9B1</color>
+    <color name="colorSuccessBg">#0A2D28</color>
+    <color name="colorSuccessBorder">#0D4A40</color>
+    <color name="colorWarning">#F5A623</color>
+    <color name="colorError">#FF5C6B</color>
+
+    <!-- Avatar colors -->
+    <color name="colorAvatar">#00C9B1</color>
+    <color name="colorAvatarText">#0A0E1A</color>
 </resources>

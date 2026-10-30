@@ -1,0 +1,34 @@
+# SMS Gateway — só WEB + MySQL externo (ex: mysql-global no EasyPanel)
+#
+# EasyPanel:
+#   1. Serviço MySQL separado: mysql-global (base + user criados)
+#   2. Serviço Compose com ESTE ficheiro
+#   3. DB_HOST = hostname interno do mysql-global (painel do MySQL)
+
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      DB_HOST: ${DB_HOST:?Defina DB_HOST — ex: mysql-global}
+      DB_PORT: ${DB_PORT:-3306}
+      DB_NAME: ${DB_NAME:-smsgateway}
+      DB_USER: ${DB_USER:-smsuser}
+      DB_PASSWORD: ${DB_PASSWORD:?Defina DB_PASSWORD}
+      APP_URL: ${APP_URL:-}
+      MIGRATE_KEY: ${MIGRATE_KEY:-}
+      PAIRING_SECRET: ${PAIRING_SECRET:-}
+      MIGRATE_ON_START: ${MIGRATE_ON_START:-true}
+      TZ: ${TZ:-UTC}
+      WAIT_DB_ATTEMPTS: ${WAIT_DB_ATTEMPTS:-90}
+    expose:
+      - "80"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health.php"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 90s

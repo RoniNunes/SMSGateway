@@ -1,0 +1,34 @@
+# SMS Gateway — EasyPanel PADRÃO (Next.js + SQLite)
+# 1 serviço web. Domínio → proxy porta 3005 → HTTPS
+#
+# NÃO use DB_PASSWORD / DB_HOST — stack SQLite
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: ${PORT:-3005}
+      HOSTNAME: 0.0.0.0
+      DATABASE_URL: file:/data/smsgateway.db
+      APP_URL: ${APP_URL:?Defina APP_URL com https://}
+      MIGRATE_KEY: ${MIGRATE_KEY:?Defina MIGRATE_KEY}
+      PAIRING_SECRET: ${PAIRING_SECRET:-}
+      SESSION_SECRET: ${SESSION_SECRET:-}
+      TZ: ${TZ:-Europe/Lisbon}
+    volumes:
+      - sqlite_data:/data
+    expose:
+      - "3005"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3005/health.php"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 180s
+
+volumes:
+  sqlite_data:

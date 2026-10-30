@@ -1,0 +1,53 @@
+# Alias — mesmo conteúdo que Dockerfile (all-in-one)
+# Mantido para compatibilidade com documentação antiga.
+
+FROM php:8.2-apache
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    tzdata \
+    supervisor \
+    mariadb-server \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN docker-php-ext-install mysqli pdo pdo_mysql \
+    && docker-php-ext-enable mysqli
+
+RUN a2enmod rewrite headers \
+    && sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
+
+RUN { \
+    echo "date.timezone = UTC"; \
+    echo "display_errors = Off"; \
+    echo "log_errors = On"; \
+    echo "upload_max_filesize = 32M"; \
+    echo "post_max_size = 32M"; \
+    echo "memory_limit = 256M"; \
+} >> /usr/local/etc/php/conf.d/production.ini
+
+ENV ALL_IN_ONE=1
+ENV DB_HOST=127.0.0.1
+ENV DB_PORT=3306
+
+WORKDIR /var/www/html
+
+COPY php/ /var/www/html/
+COPY MySQL_DB.sql /opt/schema/MySQL_DB.sql
+COPY docker/apache.conf /etc/apache2/sites-available/000-default.conf
+COPY docker/supervisord.conf /etc/supervisor/conf.d/smsgateway.conf
+COPY docker/entrypoint-all-in-one.sh /entrypoint.sh
+
+RUN sed -i 's/\r$//' /entrypoint.sh \
+    && chmod +x /entrypoint.sh \
+    && mkdir -p /var/log/supervisor /run/mysqld /var/lib/mysql \
+    && chown -R mysql:mysql /run/mysqld /var/lib/mysql \
+    && chown -R www-data:www-data /var/www/html
+
+VOLUME ["/var/lib/mysql"]
+
+EXPOSE 80
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=120s --retries=5 \
+    CMD curl -f http://localhost/health.php || exit 1
+
+ENTRYPOINT ["/entrypoint.sh"]

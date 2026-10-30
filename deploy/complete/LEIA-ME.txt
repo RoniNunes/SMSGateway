@@ -1,0 +1,41 @@
+SMS Gateway — Container Completo
+================================
+
+Um unico container com:
+  - MariaDB (base de dados) em 127.0.0.1:3306
+  - PHP + Apache (dashboard + API) na porta 80
+
+PHP e MariaDB comunicam INTERNAMENTE no mesmo container.
+Nao precisa de mysql-global, db separado, nem DB_HOST externo.
+
+INICIAR (Windows)
+-----------------
+  cd deploy\complete
+  copy .env.example .env
+  .\start.ps1
+
+PARAR
+-----
+  .\stop.ps1
+
+URLS
+----
+  http://localhost:8081/login.php
+  http://localhost:8081/health.php
+
+Login: admin@smsgateway.local / admin123
+
+EASYPANEL (recomendado — raiz do projeto)
+-----------------------------------------
+  .\scripts\deploy-easypanel.ps1 -AppUrl "https://SEU-DOMINIO.com"
+  Compose: compose.easypanel.yaml | servico: app | porta: 80
+
+EASYPANEL (alternativa — esta pasta)
+------------------------------------
+  .\build-zip.ps1  ->  SMSGateway-container-completo.zip
+  Compose: deploy/complete/compose.easypanel.yaml | servico: smsgateway
+  Variaveis: DB_PASSWORD, APP_URL, MIGRATE_KEY, PAIRING_SECRET (sem DB_HOST)
+
+LOGS
+----
+  docker compose logs -f
